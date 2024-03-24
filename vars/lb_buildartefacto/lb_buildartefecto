@@ -1,0 +1,14 @@
+def lb_buildartefecto (){
+    stage ('checkout'){
+        steps{
+            git url: scmUrl
+        }
+    }
+    
+    stage('Build Apllication'){
+        steps{
+            sh 'mvn clean'
+            sh 'mnv compile' 
+        }
+    }
+}

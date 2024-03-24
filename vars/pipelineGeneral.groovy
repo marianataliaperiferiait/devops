@@ -3,14 +3,8 @@ def call (Map params){
 
     echo "Deploying backend with SCM url: ${scmUrl}"
 
-node {
-
-// Clonacion de REpositorio
-    echo "Clonacion de repositorio"
-    checkout ([$class: 'GitSCM' , branches: [[name: '*/develop']], userRemoteConfigs: [[url:scmUrl ]]])
-
-    // Contruccion de maven
-    echo "Contruir aplicacion Maven"
-    sh 'mvn clean package'
-    }   
-}
+    script {
+        load 'vars/lb_buildartefacto/lb_buildartefacto'
+        lb_buildartefacto.lb_buildartefacto1()
+    } 
+}   
