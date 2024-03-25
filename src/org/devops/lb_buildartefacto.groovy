@@ -10,8 +10,6 @@ def aplication(){
 
 def artefact() {
     sh 'mvn package'
-
     junit 'target/surefire-reports/**/*.xml'
-
     archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
 }
