@@ -12,22 +12,22 @@ pipeline{
                 script {
                     def cloneapp = new org.devops.lb_buildartefacto()
                     cloneapp.clone
-                    def aplicationapp = new org.devops.lb_buildartefacto()
-                    aplicationapp.aplication
-                    def artefactapp = new org.devops.lb_buildartefacto()
-                    artefactapp.artefact                                      
+                    // def aplicationapp = new org.devops.lb_buildartefacto()
+                    // aplicationapp.aplication
+                    // def artefactapp = new org.devops.lb_buildartefacto()
+                    // artefactapp.artefact                                      
                 }
             }
         }             
-        stage("Fase 2: Scanner Sonnarqube") {
-            steps {
-            script {
-                def analisissonar = new org.devops.lb_analisissonarqube()
-                analisissonar.analisissonar
+        // stage("Fase 2: Scanner Sonnarqube") {
+        //     steps {
+        //     script {
+        //         def analisissonar = new org.devops.lb_analisissonarqube()
+        //         analisissonar.analisissonar
                                  
-                 }
-             }
-        }             
+        //          }
+        //      }
+        // }             
 
         }                                     
     }
