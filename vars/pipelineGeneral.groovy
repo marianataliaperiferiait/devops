@@ -1,6 +1,6 @@
 def call (scmUri){
 
-pipeline{
+ pipeline{
     agent any
     tools {
     jdk 'jdk11'
