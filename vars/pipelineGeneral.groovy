@@ -1,28 +1,34 @@
-def buildService = new org.devops.lb_buildartefacto()
-def sonarService = new org.devops.lb_analisissonarqube()
+def call (scmUri){
 
-pipeline {
+ pipeline{
     agent any
     tools {
-        jdk 'jdk11'
-        maven 'maven3'
+    jdk 'jdk11'
+    maven 'maven3'
     }
-    stages {
-        stage("Fase 1: Construcción Aplicación") {
+    stages{
+        stage("Fase 1: Contruccion Applicacion"){
             steps {
                 script {
-                    buildService.clone()
-                    buildService.aplicacion()
-                    buildService.artefact()
+                    def cloneapp = new org.devops.lb_buildartefacto()
+                    cloneapp.clone
+                    def aplicationapp = new org.devops.lb_buildartefacto()
+                    aplicationapp.aplication
+                    def artefactapp = new org.devops.lb_buildartefacto()
+                    artefactapp.artefact                                      
                 }
             }
-        }
-        stage("Fase 2: Análisis SonarQube") {
+        }             
+        stage("Fase 2: Scanner Sonnarqube") {
             steps {
-                script {
-                    sonarService.analisissonar()
-                }
-            }
-        }
+            script {
+                def analisissonar = new org.devops.lb_analisissonarqube()
+                analisissonar.analisissonar
+                                 
+                 }
+             }
+        }             
+
+        }                                     
     }
-}
+ }
