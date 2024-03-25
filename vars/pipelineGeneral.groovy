@@ -10,8 +10,8 @@ pipeline{
                     cloneapp.clone
                     def build aplicationapp = new org.devops.lb_buildartefacto()
                     aplication.aplication
-                    def build artefectapp = new org.devops.lb_buildartefacto()
-                    artefectapp.artefect                                      
+                    def build artefactapp = new org.devops.lb_buildartefacto()
+                    artefactapp.artefact                                      
                 }
             }
         }             
