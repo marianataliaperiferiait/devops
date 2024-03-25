@@ -1,5 +1,4 @@
     def call (scmUri){
-    import org.devops.lb_buildartefacto
     pipeline{
         agent any
         tools {
@@ -10,12 +9,12 @@
             stage("Fase 1: Contruccion Applicacion"){
                 steps {
                     script {
-                        def cloneapp = new org.devops.lb_buildartefacto()
-                        cloneapp.clone
-                        def aplicationapp = new org.devops.lb_buildartefacto()
-                        aplicationapp.aplication
-                        def artefactapp = new org.devops.lb_buildartefacto()
-                        artefactapp.artefact                                      
+                        def clone = new org.devops.lb_buildartefacto()
+                        clone.clone
+                        def aplication = new org.devops.lb_buildartefacto()
+                        aplication.aplication
+                        def artefact = new org.devops.lb_buildartefacto()
+                        artefact.artefact                                      
                     }
                 }
             }             
