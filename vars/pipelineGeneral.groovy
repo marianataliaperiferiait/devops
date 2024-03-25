@@ -9,11 +9,12 @@
             stage("Fase 1: Contruccion Applicacion"){
                 steps {
                     script {
-                        def clone = new org.devops.lb_buildartefacto() clone.clone
+                        def clone = new org.devops.lb_buildartefacto()
+                        clone.clone()
                         def aplication = new org.devops.lb_buildartefacto()
-                        aplication.aplication
+                        aplication.aplication()
                         def artefact = new org.devops.lb_buildartefacto()
-                        artefact.artefact                                      
+                        artefact.artefact()                                     
                     }
                 }
             }             
