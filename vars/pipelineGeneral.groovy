@@ -20,14 +20,15 @@ pipeline{
             }
         }             
         stage("Fase 2: Scanner Sonnarqube") {
-        }             
             steps {
-                 script {
-                     def analisissonar = new org.devops.lb_analisissonarqube()
-                     analisissonar .clone
+            script {
+                def analisissonar = new org.devops.lb_analisissonarqube()
+                analisissonar.analisissonar
                                  
                  }
              }
+        }             
+
         }                                     
     }
  }
