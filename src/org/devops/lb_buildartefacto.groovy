@@ -1,7 +1,7 @@
 package org.devops
 
 def clone(){
-    git branch: "master", url: "https://github.com/marianataliaperiferiait/SpringBoot.git"
+    git url: "https://github.com/marianataliaperiferiait/SpringBoot.git"
 }
 
 def aplication(){
