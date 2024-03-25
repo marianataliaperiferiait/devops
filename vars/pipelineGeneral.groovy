@@ -1,6 +1,4 @@
-    def call (scmUri){
-        def scmUri=scmUri
-        
+    def call (){
     pipeline{
         agent any
         tools {
