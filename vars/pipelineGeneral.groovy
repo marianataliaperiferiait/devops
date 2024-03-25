@@ -22,7 +22,7 @@
                 steps {
                 script {
                     def analisissonar = new org.devops.lb_analisissonarqube()
-                    analisissonar.analisissonar
+                    analisissonar.analisissonar()
                                     
                     }
                 }
