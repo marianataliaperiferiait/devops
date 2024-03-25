@@ -1,23 +1,25 @@
 def call (){
-
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Fase 1: Contruccion Applicacion"){
+    stages {
+        stage("Build and Package") {
             steps {
                 script {
-                    def build cloneapp = new org.devops.lb_buildartefacto()
-                    cloneapp.clone
-                    def build aplicationapp = new org.devops.lb_buildartefacto()
-                    aplication.aplication
-                    def build artefactapp = new org.devops.lb_buildartefacto()
-                    artefactapp.artefact                                      
+                    def buildScript = load "src/org/devops/lb_buildartefacto.groovy"
+                    buildScript.clone()
+                    buildScript.aplication()
+                    buildScript.artefact()
                 }
             }
-        }             
-        stage("Fase 2: Scanner Sonnarqube") {
-        }             
-                                   
+        }
+        stage("SonarQube Analysis") {
+            steps {
+                script {
+                    def sonarScript = load "src/org/devops/lb_analisissonarqube.groovy"
+                    sonarScript.analisissonar()
+                }
+            }
+        }
     }
- }
+}
 }
