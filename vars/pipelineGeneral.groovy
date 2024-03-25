@@ -1,10 +1,23 @@
-def call (Map params){
-    def scmUrl = params.scmUrl
+def call (){
 
-    echo "Deploying backend with SCM url: ${scmUrl}"
-
-    script {
-        load 'vars/lb_buildartefacto/lb_buildartefacto'
-        lb_buildartefacto.lb_buildartefacto1()
-    } 
-}   
+pipeline{
+    agent any
+    stages{
+        stage("Fase 1: Contruccion Applicacion"){
+            steps {
+                script {
+                    def build cloneapp = new org.devops.lb_buildartefacto()
+                    cloneapp.clone
+                    def build aplicationapp = new org.devops.lb_buildartefacto()
+                    aplication.aplication
+                    def build artefectapp = new org.devops.lb_buildartefacto()
+                    artefectapp.artefect                                      
+                }
+            }
+        }             
+        stage("Fase 2: Scanner Sonnarqube") {
+        }             
+                                   
+    }
+ }
+}
