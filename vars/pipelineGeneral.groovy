@@ -3,11 +3,11 @@ def call (scmUri){
         agent any
         stages{
             stage("Fase 1: Contruccion Applicacion"){
-                // when {
-                //     expression {
-                //         env.BRANCH_NAME == 'develop'
-                //     }
-                // }                
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
                 steps {
                     script {
                         def clone = new org.devops.lb_buildartefacto()
@@ -20,11 +20,11 @@ def call (scmUri){
                 }
             }             
             stage("Fase 2: Scanner Sonnarqube") {
-                // when {
-                //     expression {
-                //         env.BRANCH_NAME == 'develop'
-                //     }
-                // }                
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
                 steps {
                 script {
                     def analisissonar = new org.devops.lb_analisissonarqube()
@@ -34,11 +34,11 @@ def call (scmUri){
                 }
             }             
             stage("Fase 3: Construccion Imagen") {
-                // when {
-                //     expression {
-                //         env.BRANCH_NAME == 'develop'
-                //     }
-                // }                
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
                 steps {
                 script {
                     def buildImage = new org.devops.lb_buildimage()
@@ -48,11 +48,11 @@ def call (scmUri){
                 }
             }
             stage("Fase 4: Publicacion en DockerHub") {
-                // when {
-                //     expression {
-                //         env.BRANCH_NAME == 'develop'
-                //     }
-                // }                
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
                 steps {
                 script {
                     def dockerHubUsername = 'sanchezmnperiferia'
@@ -64,11 +64,11 @@ def call (scmUri){
                 }
             }
             stage("Fase 5: Despliegue de Container") {
-                // when {
-                //     expression {
-                //         env.BRANCH_NAME == 'develop'
-                //     }
-                // }                
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
                 steps {
                 script {
                     def dockerHubUsername = 'sanchezmnperiferia'
@@ -81,11 +81,11 @@ def call (scmUri){
                 }
             }            
             stage("Fase 5: Analisis Owasp") {
-                // when {
-                //     expression {
-                //         env.BRANCH_NAME == 'develop'
-                //     }
-                // }                
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
                 steps {
                 script {
                     def iphost = env.iphost
@@ -101,4 +101,4 @@ def call (scmUri){
             }                                        
             }                                     
         }
-}  
+}
