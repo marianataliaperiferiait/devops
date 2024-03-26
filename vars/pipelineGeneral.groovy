@@ -7,7 +7,7 @@ def call (scmUri){
                 //     expression {
                 //         env.BRANCH_NAME == 'develop'
                 //     }
-                }                
+                // }                
                 steps {
                     script {
                         def clone = new org.devops.lb_buildartefacto()
@@ -24,7 +24,7 @@ def call (scmUri){
                 //     expression {
                 //         env.BRANCH_NAME == 'develop'
                 //     }
-                }                
+                // }                
                 steps {
                 script {
                     def analisissonar = new org.devops.lb_analisissonarqube()
@@ -38,7 +38,7 @@ def call (scmUri){
                 //     expression {
                 //         env.BRANCH_NAME == 'develop'
                 //     }
-                }                
+                // }                
                 steps {
                 script {
                     def buildImage = new org.devops.lb_buildimage()
@@ -52,7 +52,7 @@ def call (scmUri){
                 //     expression {
                 //         env.BRANCH_NAME == 'develop'
                 //     }
-                }                
+                // }                
                 steps {
                 script {
                     def dockerHubUsername = 'sanchezmnperiferia'
@@ -62,13 +62,13 @@ def call (scmUri){
                                     
                     }
                 }
-            // }
+            }
             stage("Fase 5: Despliegue de Container") {
                 // when {
                 //     expression {
                 //         env.BRANCH_NAME == 'develop'
                 //     }
-                }                
+                // }                
                 steps {
                 script {
                     def dockerHubUsername = 'sanchezmnperiferia'
@@ -79,13 +79,13 @@ def call (scmUri){
                                     
                     }
                 }
-            // }            
+            }            
             stage("Fase 5: Analisis Owasp") {
                 // when {
                 //     expression {
                 //         env.BRANCH_NAME == 'develop'
                 //     }
-                }                
+                // }                
                 steps {
                 script {
                     def iphost = env.iphost
@@ -98,7 +98,7 @@ def call (scmUri){
                                     
                     }
                 }
-//             }                                        
-//             }                                     
-//         }
-// }   
+            }                                        
+            }                                     
+        }
+}   
