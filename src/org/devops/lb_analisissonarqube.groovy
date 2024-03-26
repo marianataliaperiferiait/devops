@@ -6,6 +6,7 @@ def analisissonar(){
         sh "${scannerHome}/bin/sonar-scanner \
         -Dsonar.projectKey=analisisSpringBoot \
         -Dsonar.projectName=analisisSpringBoot \
-        -Dsonar.sources=src"
+        -Dsonar.sources=src \
+        -Dsonar.java.binaries=target/classes"
     }        
 }
