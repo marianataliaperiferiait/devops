@@ -33,5 +33,5 @@ def owaspAnalysis(String iphost, String dockerHubUsername, String springbootImag
     //     sh "docker rm ${zapContainerName}"
     //     sh "docker stop ${springbootContainerName}"
     //     sh "docker rm ${springbootContainerName}"
-    // }
+    }
 }
