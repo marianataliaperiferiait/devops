@@ -3,6 +3,11 @@
         agent any
         stages{
             stage("Fase 1: Contruccion Applicacion"){
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'feature'
+                    }
+                }                
                 steps {
                     script {
                         def clone = new org.devops.lb_buildartefacto()
@@ -15,6 +20,11 @@
                 }
             }             
             stage("Fase 2: Scanner Sonnarqube") {
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'feature'
+                    }
+                }                
                 steps {
                 script {
                     def analisissonar = new org.devops.lb_analisissonarqube()
