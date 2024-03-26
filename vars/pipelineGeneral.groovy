@@ -3,10 +3,10 @@ def call (scmUri){
         agent any
         stages{
             stage("Fase 1: Contruccion Applicacion"){
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'develop'
-                    }
+                // when {
+                //     expression {
+                //         env.BRANCH_NAME == 'develop'
+                //     }
                 }                
                 steps {
                     script {
@@ -20,10 +20,10 @@ def call (scmUri){
                 }
             }             
             stage("Fase 2: Scanner Sonnarqube") {
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'develop'
-                    }
+                // when {
+                //     expression {
+                //         env.BRANCH_NAME == 'develop'
+                //     }
                 }                
                 steps {
                 script {
@@ -34,10 +34,10 @@ def call (scmUri){
                 }
             }             
             stage("Fase 3: Construccion Imagen") {
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'develop'
-                    }
+                // when {
+                //     expression {
+                //         env.BRANCH_NAME == 'develop'
+                //     }
                 }                
                 steps {
                 script {
@@ -48,10 +48,10 @@ def call (scmUri){
                 }
             }
             stage("Fase 4: Publicacion en DockerHub") {
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'develop'
-                    }
+                // when {
+                //     expression {
+                //         env.BRANCH_NAME == 'develop'
+                //     }
                 }                
                 steps {
                 script {
@@ -62,12 +62,12 @@ def call (scmUri){
                                     
                     }
                 }
-            }
+            // }
             stage("Fase 5: Despliegue de Container") {
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'develop'
-                    }
+                // when {
+                //     expression {
+                //         env.BRANCH_NAME == 'develop'
+                //     }
                 }                
                 steps {
                 script {
@@ -79,12 +79,12 @@ def call (scmUri){
                                     
                     }
                 }
-            }            
+            // }            
             stage("Fase 5: Analisis Owasp") {
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'develop'
-                    }
+                // when {
+                //     expression {
+                //         env.BRANCH_NAME == 'develop'
+                //     }
                 }                
                 steps {
                 script {
@@ -98,7 +98,7 @@ def call (scmUri){
                                     
                     }
                 }
-            }                                        
-            }                                     
-        }
-}   
+//             }                                        
+//             }                                     
+//         }
+// }   
