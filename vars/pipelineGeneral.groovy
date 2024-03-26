@@ -63,6 +63,23 @@ def call (scmUri){
                     }
                 }
             }
+            stage("Fase 5: Despliegue de Container") {
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'develop'
+                    }
+                }                
+                steps {
+                script {
+                    def dockerHubUsername = 'sanchezmnperiferia'
+                    def imageName = 'crudspringboot-buildimagen'
+                    def containerName = 'crudspringboot-container'
+                    def runContainer = new org.devops.lb_buildartefacto()
+                    runContainer.runContainer(dockerHubUsername, imageName, containerName)
+                                    
+                    }
+                }
+            }            
             stage("Fase 5: Analisis Owasp") {
                 when {
                     expression {
