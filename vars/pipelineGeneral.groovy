@@ -74,7 +74,7 @@ def call (scmUri){
                     def dockerHubUsername = 'sanchezmnperiferia'
                     def imageName = 'crudspringboot-buildimagen'
                     def containerName = 'crudspringboot-container'
-                    def runContainer = new org.devops.lb_buildartefacto()
+                    def runContainer = new org.devops.lb_deploydocker()
                     runContainer.runContainer(dockerHubUsername, imageName, containerName)
                                     
                     }
