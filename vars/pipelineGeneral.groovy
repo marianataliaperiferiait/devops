@@ -1,10 +1,6 @@
     def call (scmUri){
     pipeline{
         agent any
-        // tools {
-        // jdk 'jdk11'
-        // maven 'maven3'
-        // }
         stages{
             stage("Fase 1: Contruccion Applicacion"){
                 steps {
