@@ -6,6 +6,7 @@ def clone(){
 
 def aplication(){
     sh 'mvn clean package'
+    sh 'mvn compile'
 }
 
 def artefact() {
